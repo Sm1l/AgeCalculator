@@ -1,0 +1,19 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  padding-right: 150px;
+  background-color: var(--color-white);
+  border-radius: 15px;
+  border-bottom-right-radius: 25%;
+  box-shadow: 3px 3px 20px 4px var(--color-grey), inset 2px 2px 15px 1px var(--color-grey);
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size: 46px;
+}

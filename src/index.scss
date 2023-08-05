@@ -1,0 +1,32 @@
+@import-normalize;
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,400;0,500;0,700;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+:root {
+  --color-white: #ffffff;
+  // --color-beige: #f7d9cc;
+  // --color-beige2: #f6cbb9;
+  --color-purple: #7138c8;
+  --color-light-purple: #bfafd6;
+  --color-red: #f76666;
+  --color-light-grey: #eaeaea;
+  --color-grey: #7b7b7b;
+  --color-black: #0c0c0c;
+}
+
+body {
+  margin: 0;
+  font-family: "Kanit", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-grey);
+  font-weight: 400;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
