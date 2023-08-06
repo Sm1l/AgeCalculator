@@ -7,18 +7,18 @@ import { Input } from "components/Input";
 // import { ValidationValueMessage } from "react-hook-form"; //!!!!ё
 
 interface FormValues {
-  day: number;
-  month: number;
-  year: number;
+  day: string;
+  month: string;
+  year: string;
 }
 
 interface FormProps {
-  setYear: React.Dispatch<React.SetStateAction<number | null>>;
-  setMonth: React.Dispatch<React.SetStateAction<number | null>>;
-  setDay: React.Dispatch<React.SetStateAction<number | null>>;
+  setBYear: React.Dispatch<React.SetStateAction<string | null>>;
+  setBMonth: React.Dispatch<React.SetStateAction<string | null>>;
+  setBDay: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-const Form: React.FC<FormProps> = ({ setYear, setMonth, setDay }) => {
+const Form: React.FC<FormProps> = ({ setBYear, setBMonth, setBDay }) => {
   const yearNow: number | string = new Date().getFullYear();
 
   const {
@@ -29,10 +29,12 @@ const Form: React.FC<FormProps> = ({ setYear, setMonth, setDay }) => {
   } = useForm<FormValues>({ mode: "onBlur" });
 
   const onSubmit = handleSubmit((data) => {
-    setYear(data.year);
-    setMonth(data.month);
-    setDay(data.day);
-    // reset();
+    // console.log(typeof data.year);
+
+    setBYear(data.year);
+    setBMonth(data.month);
+    setBDay(data.day);
+    reset();
   });
 
   return (
