@@ -44,9 +44,9 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .error {
-  height: 20px;
+  height: 30px;
   color: var(--color-red);
-  font-size: 14px;
+  font-size: 10px;
   font-weight: 200;
 }
 
@@ -153,9 +153,15 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 14px;
     letter-spacing: 6px;
   }
+
   .inputContainer {
     gap: 20px;
   }
+
+  .inputComponent {
+    min-width: 220px;
+  }
+
   .input {
     height: 60px;
     font-size: 28px;
@@ -163,6 +169,9 @@ input[type="number"]::-webkit-inner-spin-button {
     &::placeholder {
       font-size: inherit;
     }
+  }
+  .error {
+    font-size: 16px;
   }
 
   .button {
