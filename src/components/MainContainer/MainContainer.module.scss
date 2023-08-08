@@ -1,19 +1,30 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
-  padding: 50px;
-  padding-right: 150px;
+  padding: 30px;
   background-color: var(--color-white);
   border-radius: 15px;
   border-bottom-right-radius: 25%;
-  box-shadow: 3px 3px 20px 4px var(--color-grey), inset 2px 2px 15px 1px var(--color-grey);
+  box-shadow: 2px 2px 7px 3px var(--color-grey), inset 1px 1px 3px 1px var(--color-grey);
 }
 
 .title {
   text-transform: uppercase;
-  letter-spacing: 8px;
-  font-size: 46px;
+  letter-spacing: 6px;
+  font-size: 26px;
+}
+
+@media (min-width: 900px) {
+  .mainContainer {
+    gap: 30px;
+    padding-right: 150px;
+    box-shadow: 3px 3px 20px 4px var(--color-grey), inset 2px 2px 15px 1px var(--color-grey);
+  }
+  .title {
+    letter-spacing: 8px;
+    font-size: 46px;
+  }
 }

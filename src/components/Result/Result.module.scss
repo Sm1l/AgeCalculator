@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   align-self: self-start;
-
-  gap: 15px;
+  gap: 10px;
+  padding-top: 20px;
 }
 .container {
   align-items: flex-start;
   display: flex;
-  gap: 20px;
-  font-size: 88px;
+  gap: 10px;
+  font-size: 42px;
   font-style: italic;
   font-weight: 700;
 }
@@ -18,4 +18,15 @@
 }
 .text {
   color: var(--color-black);
+}
+
+@media (min-width: 900px) {
+  .result {
+    padding-top: 0px;
+    gap: 15px;
+  }
+  .container {
+    font-size: 88px;
+    gap: 15px;
+  }
 }

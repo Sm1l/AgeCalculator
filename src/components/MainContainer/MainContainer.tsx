@@ -10,6 +10,7 @@ const MainContainer: React.FC<MainContainerProps> = () => {
   const [bYear, setBYear] = useState<string | null>(null);
   const [bMonth, setBMonth] = useState<string | null>(null);
   const [bDay, setBDay] = useState<string | null>(null);
+
   return (
     <div className={styles.mainContainer}>
       <h1 className={styles.title}>Age calculator</h1>

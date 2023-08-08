@@ -32,11 +32,11 @@ const Result: React.FC<ResultProps> = ({ bYear, bMonth, bDay }) => {
         <p className={styles.text}>years</p>
       </div>
       <div className={styles.container}>
-        <div className={styles.number}>{month ? month : "- -"}</div>
+        <div className={styles.number}>{month}</div>
         <p className={styles.text}>months</p>
       </div>
       <div className={styles.container}>
-        <div className={styles.number}>{day ? day : "- -"}</div>
+        <div className={styles.number}>{day}</div>
         <p className={styles.text}>days</p>
       </div>
     </div>

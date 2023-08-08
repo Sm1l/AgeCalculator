@@ -14,13 +14,14 @@ input[type="number"]::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
+
   ::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 110%;
+    width: 100%;
     height: 1px;
     background-color: var(--color-light-grey);
     z-index: 1;
@@ -29,9 +30,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .inputContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  // max-width: 100%;
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(50px, auto));
+  gap: 5px;
 }
 
 .inputComponent {
@@ -40,8 +40,7 @@ input[type="number"]::-webkit-inner-spin-button {
   text-align: start;
   padding: 5px;
   gap: 10px;
-  // background-color: #d6fbb5;
-  min-width: 200px;
+  // min-width: 200px;
 }
 
 .error {
@@ -53,28 +52,29 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .label {
   cursor: pointer;
-  font-size: 14px;
-  letter-spacing: 6px;
+  font-size: 10px;
+  letter-spacing: 4px;
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .input {
+  display: block;
   padding: 0 10px;
-  flex-grow: 5;
   height: 60px;
-  min-width: 20px;
+  min-width: 40px;
   max-width: 150px;
   border: none;
   border: 1px solid var(--color-light-grey);
   border-radius: 10px;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
 
   &::placeholder {
     color: var(--color-grey);
     opacity: 1;
+    font-size: 14px;
   }
 
   &:focus {
@@ -93,47 +93,44 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .button {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  bottom: -40px;
-  right: -90px;
+  width: 60px;
+  height: 60px;
+  bottom: -30px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
   color: var(--color-white);
   border: none;
   border-radius: 50%;
   background-color: var(--color-purple);
   z-index: 2;
   cursor: pointer;
-  transition: transform 300ms ease-out, box-shadow 300ms ease-out;
-
-  &:hover {
-    box-shadow: 3px 3px 20px 4px var(--color-grey), inset 2px 2px 15px 1px var(--color-grey);
-    transform: translateY(-3px) translateX(-3px);
-    transition: transform 300ms ease-out, box-shadow 300ms ease-out;
-  }
 
   &::after {
     position: absolute;
     content: "";
-    top: 25px;
-    left: calc(80px / 2);
+    top: 18px;
+    left: calc(60px / 2);
     width: 2px;
-    height: 30px;
+    height: 25px;
     background-color: var(--color-white);
   }
 
   &::before {
     position: absolute;
     content: "";
-    top: 31px;
-    left: calc(60px / 2);
+    top: 24px;
+    left: calc(44px / 2);
     rotate: 45deg;
-    width: 20px;
-    height: 20px;
-    // background-color: var(--color-white);
+    width: 15px;
+    height: 15px;
     border: 2px solid var(--color-white);
     border-top: none;
     border-left: none;
   }
+
   //!!!ё
   &:disabled {
     background-color: var(--color-light-purple);
@@ -141,6 +138,68 @@ input[type="number"]::-webkit-inner-spin-button {
     &:hover {
       box-shadow: none;
       transform: none;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .form {
+    ::after {
+      width: 110%;
+    }
+  }
+
+  .label {
+    font-size: 14px;
+    letter-spacing: 6px;
+  }
+  .inputContainer {
+    gap: 20px;
+  }
+  .input {
+    height: 60px;
+    font-size: 28px;
+
+    &::placeholder {
+      font-size: inherit;
+    }
+  }
+
+  .button {
+    width: 80px;
+    height: 80px;
+    right: -90px;
+    bottom: -40px;
+    margin-right: 0;
+    transition: transform 300ms ease-out, box-shadow 300ms ease-out;
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 25px;
+      left: calc(80px / 2);
+      width: 2px;
+      height: 30px;
+      background-color: var(--color-white);
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 31px;
+      left: calc(60px / 2);
+      rotate: 45deg;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--color-white);
+      border-top: none;
+      border-left: none;
+    }
+
+    &:hover {
+      box-shadow: 3px 3px 20px 4px var(--color-grey), inset 2px 2px 15px 1px var(--color-grey);
+      transform: translateY(-3px) translateX(-3px);
+      transition: transform 300ms ease-out, box-shadow 300ms ease-out;
     }
   }
 }
