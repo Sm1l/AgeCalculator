@@ -19,7 +19,7 @@ interface FormProps {
 }
 
 const Form: React.FC<FormProps> = ({ setBYear, setBMonth, setBDay }) => {
-  const yearNow: number | string = new Date().getFullYear();
+  const yearNow: number = new Date().getFullYear();
 
   const {
     register,
@@ -97,7 +97,9 @@ const Form: React.FC<FormProps> = ({ setBYear, setBMonth, setBDay }) => {
           {/* <Input />
           //!!!!ё */}
         </div>
-        <button className={styles.button} type="submit" disabled={!isValid}></button>
+        <button className={styles.button} type="submit" disabled={!isValid}>
+          {" "}
+        </button>
       </form>
     </>
   );

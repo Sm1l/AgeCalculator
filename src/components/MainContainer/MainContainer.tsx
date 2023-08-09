@@ -12,11 +12,11 @@ const MainContainer: React.FC<MainContainerProps> = () => {
   const [bDay, setBDay] = useState<string | null>(null);
 
   return (
-    <div className={styles.mainContainer}>
+    <main className={styles.mainContainer}>
       <h1 className={styles.title}>Age calculator</h1>
       <Form setBYear={setBYear} setBMonth={setBMonth} setBDay={setBDay} />
       <Result bYear={bYear} bMonth={bMonth} bDay={bDay} />
-    </div>
+    </main>
   );
 };
 
