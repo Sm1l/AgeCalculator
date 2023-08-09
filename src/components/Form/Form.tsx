@@ -29,8 +29,6 @@ const Form: React.FC<FormProps> = ({ setBYear, setBMonth, setBDay }) => {
   } = useForm<FormValues>({ mode: "onBlur" });
 
   const onSubmit = handleSubmit((data) => {
-    // console.log(typeof data.year);
-
     setBYear(data.year);
     setBMonth(data.month);
     setBDay(data.day);
@@ -91,9 +89,7 @@ const Form: React.FC<FormProps> = ({ setBYear, setBMonth, setBDay }) => {
               {...register("year", {
                 required: "The field should not be empty",
                 min: { value: 1900, message: "Must be a valid year" },
-                max: { value: 2023, message: "Must be in the past" },
-                // max: { value: { yearNow }, message: `максимальное значение равно ${yearNow}` },//!!!!ё
-                // pattern: {
+                max: { value: yearNow, message: "Must be in the past" },
               })}
             />
             <div className={styles.error}>{errors?.year && <p>{errors?.year?.message || "error"}</p>}</div>

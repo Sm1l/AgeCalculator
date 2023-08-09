@@ -1,0 +1,21 @@
+.resultElem {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 700;
+}
+.number {
+  color: var(--color-purple);
+}
+.text {
+  color: var(--color-black);
+}
+
+@media (min-width: 900px) {
+  .resultElem {
+    font-size: 88px;
+    gap: 15px;
+  }
+}
