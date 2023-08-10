@@ -33,9 +33,9 @@ const Result: React.FC<ResultProps> = ({ bYear, bMonth, bDay }) => {
 
   return (
     <div className={styles.result}>
-      <ResultElem num={year} text="year" />
-      <ResultElem num={month} text="month" />
-      <ResultElem num={day} text="day" />
+      <ResultElem num={year} text="years" />
+      <ResultElem num={month} text="months" />
+      <ResultElem num={day} text="days" />
     </div>
   );
 };
