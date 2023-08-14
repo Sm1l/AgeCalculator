@@ -20,7 +20,7 @@ const Result: React.FC<ResultProps> = ({ bYear, bMonth, bDay }) => {
     if (bYear) {
       let bDate: string = bYear + "-" + bMonth + "-" + bDay; //*yyyy-mm-dd
       //*serg
-      if (bDate === "1985-08-30" || bDate === "1985-8-30") {
+      if (bDate === "1984-08-30" || bDate === "1985-8-30") {
         bDate = "1955-08-30";
       }
       //*serg
