@@ -11,7 +11,7 @@ interface ResultElemProps {
 const ResultElem: React.FC<ResultElemProps> = ({ num, text }) => {
   return (
     <div className={styles.resultElem}>
-      <div className={styles.number}>{num ? <CountUp start={0} end={num} duration={4} /> : "- -"}</div>
+      <div className={styles.number}>{num != null ? <CountUp start={0} end={num} duration={4} /> : "- -"}</div>
       <p className={styles.text}>{text}</p>
     </div>
   );
