@@ -2,11 +2,11 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 import styles from "./Form.module.scss";
-import { Input } from "components/Input";
+import { InputComponent } from "components/InputComponent";
 
 // import { ValidationValueMessage } from "react-hook-form"; //!!!!ё
 
-interface FormValues {
+export interface IFormValues {
   day: string;
   month: string;
   year: string;
@@ -26,7 +26,7 @@ const Form: React.FC<FormProps> = ({ setBYear, setBMonth, setBDay }) => {
     formState: { errors, isValid },
     handleSubmit,
     reset,
-  } = useForm<FormValues>({ mode: "onBlur" });
+  } = useForm<IFormValues>({ mode: "onBlur" });
 
   const onSubmit = handleSubmit((data) => {
     setBYear(data.year);
@@ -39,63 +39,40 @@ const Form: React.FC<FormProps> = ({ setBYear, setBMonth, setBDay }) => {
     <>
       <form className={styles.form} onSubmit={onSubmit}>
         <div className={styles.inputContainer}>
-          <div className={styles.inputComponent}>
-            <label htmlFor="day" className={errors.day ? `${styles.label} ${styles.textError}` : styles.label}>
-              day
-            </label>
-            <input
-              className={errors.day ? `${styles.input} ${styles.inputError}` : styles.input}
-              type="number"
-              id="day"
-              placeholder="dd"
-              autoComplete="off"
-              {...register("day", {
-                required: "The field should not be empty",
-                min: { value: 1, message: "Min value is 1" },
-                max: { value: 31, message: "Max value is 31" },
-              })}
-            />
-            <div className={styles.error}>{errors?.day && <p>{errors?.day?.message || "error"}</p>}</div>
-          </div>
-          <div className={styles.inputComponent}>
-            <label htmlFor="month" className={errors.month ? `${styles.label} ${styles.textError}` : styles.label}>
-              month
-            </label>
-            <input
-              className={errors.month ? `${styles.input} ${styles.inputError}` : styles.input}
-              type="number"
-              id="month"
-              placeholder="mm"
-              autoComplete="off"
-              {...register("month", {
-                required: "The field should not be empty",
-                min: { value: 1, message: "Min value is 01" },
-                max: { value: 12, message: "Max value is 12" },
-                maxLength: { value: 2, message: "Max value is 12" },
-              })}
-            />
-            <div className={styles.error}>{errors?.month && <p>{errors?.month?.message || "error"}</p>}</div>
-          </div>
-          <div className={styles.inputComponent}>
-            <label htmlFor="year" className={errors.year ? `${styles.label} ${styles.textError}` : styles.label}>
-              year
-            </label>
-            <input
-              className={errors.year ? `${styles.input} ${styles.inputError}` : styles.input}
-              type="number"
-              id="year"
-              placeholder="yyyy"
-              autoComplete="off"
-              {...register("year", {
-                required: "The field should not be empty",
-                min: { value: 1900, message: "Must be a valid year" },
-                max: { value: yearNow, message: "Must be in the past" },
-              })}
-            />
-            <div className={styles.error}>{errors?.year && <p>{errors?.year?.message || "error"}</p>}</div>
-          </div>
-          {/* <Input />
-          //!!!!ё */}
+          <InputComponent
+            placeholder="dd"
+            name="day"
+            register={register}
+            rules={{
+              required: "The field should not be empty",
+              min: { value: 1, message: "Min value is 1" },
+              max: { value: 31, message: "Max value is 31" },
+            }}
+            errors={errors}
+          />
+          <InputComponent
+            name="month"
+            placeholder="mm"
+            register={register}
+            rules={{
+              required: "The field should not be empty",
+              min: { value: 1, message: "Min value is 01" },
+              max: { value: 12, message: "Max value is 12" },
+              maxLength: { value: 2, message: "Max value is 12" },
+            }}
+            errors={errors}
+          />
+          <InputComponent
+            name="year"
+            placeholder="yyyy"
+            register={register}
+            rules={{
+              required: "The field should not be empty",
+              min: { value: 1900, message: "Must be a valid year" },
+              max: { value: yearNow, message: "Must be in the past" },
+            }}
+            errors={errors}
+          />
         </div>
         <button className={styles.button} type="submit" disabled={!isValid} />
       </form>
