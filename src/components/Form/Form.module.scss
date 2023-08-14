@@ -16,7 +16,7 @@ input[type="number"]::-webkit-inner-spin-button {
   gap: 30px;
   padding-bottom: 20px;
 
-  ::after {
+  &::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -32,63 +32,6 @@ input[type="number"]::-webkit-inner-spin-button {
   display: grid;
   grid-template-columns: repeat(3, minmax(50px, auto));
   gap: 5px;
-}
-
-.inputComponent {
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  padding: 5px;
-  gap: 10px;
-  // min-width: 200px;
-}
-
-.error {
-  height: 30px;
-  color: var(--color-red);
-  font-size: 10px;
-  font-weight: 200;
-}
-
-.label {
-  cursor: pointer;
-  font-size: 10px;
-  letter-spacing: 4px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.input {
-  display: block;
-  padding: 0 10px;
-  height: 60px;
-  min-width: 40px;
-  max-width: 150px;
-  border: none;
-  border: 1px solid var(--color-light-grey);
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-
-  &::placeholder {
-    color: var(--color-grey);
-    opacity: 1;
-    font-size: 14px;
-  }
-
-  &:focus {
-    outline: none;
-    border: 1px solid var(--color-grey);
-  }
-}
-
-.inputError {
-  border: 1px solid var(--color-red);
-}
-
-.textError {
-  color: var(--color-red);
 }
 
 .button {
@@ -131,7 +74,6 @@ input[type="number"]::-webkit-inner-spin-button {
     border-left: none;
   }
 
-  //!!!ё
   &:disabled {
     background-color: var(--color-light-purple);
     cursor: auto;
@@ -144,34 +86,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
 @media (min-width: 900px) {
   .form {
-    ::after {
+    &::after {
       width: 110%;
     }
-  }
-
-  .label {
-    font-size: 14px;
-    letter-spacing: 6px;
-  }
-
-  .inputContainer {
-    gap: 20px;
-  }
-
-  .inputComponent {
-    min-width: 220px;
-  }
-
-  .input {
-    height: 60px;
-    font-size: 28px;
-
-    &::placeholder {
-      font-size: inherit;
-    }
-  }
-  .error {
-    font-size: 16px;
   }
 
   .button {
